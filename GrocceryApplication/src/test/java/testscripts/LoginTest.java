@@ -18,7 +18,7 @@ public class LoginTest extends Base{
 			LoginPage loginPage = new LoginPage(driver);//Creating an object of LoginPage, passing the WebDriver from Base class.
 			loginPage.enterUserNameOnUserNamefield(usernamevalue);//Calling the method inside LoginPage to type-username into-usernamefield
 			loginPage.enterPasswordOnPasswordField(passwordvalue);
-			loginPage.SigninClick();
+			loginPage.signinClick();
 			boolean dashboardDisplayed=loginPage.isDashboardDisplayed();
 			Assert.assertTrue(dashboardDisplayed, "user was unable to login with valid credentials.");
 		}
@@ -30,7 +30,7 @@ public class LoginTest extends Base{
 			LoginPage loginPage = new LoginPage(driver);
 			loginPage.enterUserNameOnUserNamefield(usernamevalue);
 			loginPage.enterPasswordOnPasswordField(passwordvalue);
-			loginPage.SigninClick();
+			loginPage.signinClick();
 			String expected="7rmart supermarke";
 			String actual=loginPage.getTheTitle();
 			Assert.assertEquals(actual, expected,"user was able to login with invalid password.");
@@ -43,7 +43,7 @@ public class LoginTest extends Base{
 			LoginPage loginPage = new LoginPage(driver);
 			loginPage.enterUserNameOnUserNamefield(usernamevalue);
 			loginPage.enterPasswordOnPasswordField(passwordvalue);
-			loginPage.SigninClick();
+			loginPage.signinClick();
 			boolean adminusersDisplayed=loginPage.isAdminUsersDispalyed();
 			Assert.assertTrue(adminusersDisplayed, "user was unable to login with invalid username");
 			
@@ -56,7 +56,7 @@ public class LoginTest extends Base{
 			LoginPage loginPage = new LoginPage(driver);
 			loginPage.enterUserNameOnUserNamefield(usernamevalue);
 			loginPage.enterPasswordOnPasswordField(passwordvalue);
-			loginPage.SigninClick();
+			loginPage.signinClick();
 			String expected="Sign in to start your session";
 			String actual=loginPage.getTheHeading();
 			Assert.assertEquals(actual, expected,"user was unable to login");

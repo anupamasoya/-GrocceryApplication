@@ -30,7 +30,7 @@ public class LoginPage {
 			password.sendKeys(passwordvalue);
 		}
 
-		public void SigninClick() {
+		public void signinClick() {
 			signInBtn.click();
 		}
 		public boolean isDashboardDisplayed() {
@@ -48,10 +48,8 @@ public class LoginPage {
 		public String getTheHeading() {
 			return heading.getText();
 		}
-		 
 
-	}
-
+}
 
 
 
