@@ -2,6 +2,7 @@ package testscripts;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
@@ -12,12 +13,14 @@ public class LoginTest extends Base{
 	
 		@Test
 		public void verifyWhetherUserIsAbleToLoginWithValidCredential() throws IOException {
-			String usernamevalue = ExcelUtility.getStringData(0, 0, "LoginPage");
-			String passwordvalue = ExcelUtility.getStringData(0, 1, "LoginPage");
-			LoginPage loginPage = new LoginPage(driver);
-			loginPage.enterUserNameOnUserNamefield(usernamevalue);
+			String usernamevalue = ExcelUtility.getStringData(0, 0, "LoginPage");//Reading username from excel.Row0,col0in sheet loginpage
+			String passwordvalue = ExcelUtility.getStringData(0, 1, "LoginPage");//Reading password from excel
+			LoginPage loginPage = new LoginPage(driver);//Creating an object of LoginPage, passing the WebDriver from Base class.
+			loginPage.enterUserNameOnUserNamefield(usernamevalue);//Calling the method inside LoginPage to type-username into-usernamefield
 			loginPage.enterPasswordOnPasswordField(passwordvalue);
 			loginPage.SigninClick();
+			boolean dashboardDisplayed=loginPage.isDashboardDisplayed();
+			Assert.assertTrue(dashboardDisplayed, "user was unable to login with valid credentials.");
 		}
 
 		@Test
@@ -28,6 +31,9 @@ public class LoginTest extends Base{
 			loginPage.enterUserNameOnUserNamefield(usernamevalue);
 			loginPage.enterPasswordOnPasswordField(passwordvalue);
 			loginPage.SigninClick();
+			String expected="7rmart supermarke";
+			String actual=loginPage.getTheTitle();
+			Assert.assertEquals(actual, expected,"user was able to login with invalid password.");
 		}
 
 		@Test
@@ -38,6 +44,9 @@ public class LoginTest extends Base{
 			loginPage.enterUserNameOnUserNamefield(usernamevalue);
 			loginPage.enterPasswordOnPasswordField(passwordvalue);
 			loginPage.SigninClick();
+			boolean adminusersDisplayed=loginPage.isAdminUsersDispalyed();
+			Assert.assertTrue(adminusersDisplayed, "user was unable to login with invalid username");
+			
 		}
 
 		@Test
@@ -48,6 +57,9 @@ public class LoginTest extends Base{
 			loginPage.enterUserNameOnUserNamefield(usernamevalue);
 			loginPage.enterPasswordOnPasswordField(passwordvalue);
 			loginPage.SigninClick();
+			String expected="Sign in to start your session";
+			String actual=loginPage.getTheHeading();
+			Assert.assertEquals(actual, expected,"user was unable to login");
 		}
 
 	}
