@@ -1,10 +1,8 @@
 package testscripts;
 
 import java.io.IOException;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import automationCore.Base;
 import pages.LoginPage;
 import utilities.ExcelUtility;
@@ -31,7 +29,7 @@ public class LoginTest extends Base{
 			loginPage.enterUserNameOnUserNamefield(usernamevalue);
 			loginPage.enterPasswordOnPasswordField(passwordvalue);
 			loginPage.signinClick();
-			String expected="7rmart supermarke";
+			String expected="7rmart supermarket";
 			String actual=loginPage.getTheTitle();
 			Assert.assertEquals(actual, expected,"user was able to login with invalid password.");
 		}

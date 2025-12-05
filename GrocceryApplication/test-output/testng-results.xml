@@ -2,31 +2,31 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-03T19:10:24 IST" name="Default suite" finished-at="2025-12-03T19:10:29 IST" duration-ms="5236">
+  <suite started-at="2025-12-05T12:55:46 IST" name="Default suite" finished-at="2025-12-05T12:55:50 IST" duration-ms="4256">
     <groups>
     </groups>
-    <test started-at="2025-12-03T19:10:24 IST" name="Default test" finished-at="2025-12-03T19:10:29 IST" duration-ms="5236">
-      <class name="testscripts.HomeTest">
-        <test-method is-config="true" signature="initializeBrowser()[pri:0, instance:testscripts.HomeTest@128d2484]" started-at="2025-12-03T19:10:24 IST" name="initializeBrowser" finished-at="2025-12-03T19:10:27 IST" duration-ms="3628" status="PASS">
+    <test started-at="2025-12-05T12:55:46 IST" name="Default test" finished-at="2025-12-05T12:55:50 IST" duration-ms="4256">
+      <class name="testscripts.AdminUsersTest">
+        <test-method is-config="true" signature="initializeBrowser()[pri:0, instance:testscripts.AdminUsersTest@7c7b252e]" started-at="2025-12-05T12:55:46 IST" name="initializeBrowser" finished-at="2025-12-05T12:55:48 IST" duration-ms="1909" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeBrowser -->
-        <test-method signature="verifyWhetherUserIsAbleToSuccessfullyLogout()[pri:0, instance:testscripts.HomeTest@128d2484]" started-at="2025-12-03T19:10:27 IST" name="verifyWhetherUserIsAbleToSuccessfullyLogout" finished-at="2025-12-03T19:10:29 IST" duration-ms="1440" status="PASS">
+        <test-method signature="verifyWhetherAdminIsAbleToAddNewUser()[pri:0, instance:testscripts.AdminUsersTest@7c7b252e]" started-at="2025-12-05T12:55:48 IST" name="verifyWhetherAdminIsAbleToAddNewUser" finished-at="2025-12-05T12:55:50 IST" duration-ms="2320" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyWhetherUserIsAbleToSuccessfullyLogout -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscripts.HomeTest@128d2484]" started-at="2025-12-03T19:10:29 IST" name="driverQuit" finished-at="2025-12-03T19:10:29 IST" duration-ms="140" status="PASS">
+        </test-method> <!-- verifyWhetherAdminIsAbleToAddNewUser -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscripts.AdminUsersTest@7c7b252e]" started-at="2025-12-05T12:55:50 IST" name="driverQuit" finished-at="2025-12-05T12:55:50 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyWhetherUserIsAbleToSuccessfullyLogout status=SUCCESS method=HomeTest.verifyWhetherUserIsAbleToSuccessfullyLogout()[pri:0, instance:testscripts.HomeTest@128d2484] output={null}]]]>
+                <![CDATA[[TestResult name=verifyWhetherAdminIsAbleToAddNewUser status=SUCCESS method=AdminUsersTest.verifyWhetherAdminIsAbleToAddNewUser()[pri:0, instance:testscripts.AdminUsersTest@7c7b252e] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverQuit -->
-      </class> <!-- testscripts.HomeTest -->
+      </class> <!-- testscripts.AdminUsersTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
