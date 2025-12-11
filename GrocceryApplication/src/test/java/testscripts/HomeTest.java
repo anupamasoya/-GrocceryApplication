@@ -13,7 +13,7 @@ import utilities.ExcelUtility;
 
 public class HomeTest extends Base {
 		
-		@Test
+		@Test(priority = 1,description = "Verify whether User is able to successfully logout",retryAnalyzer = retry.Retry.class)
 		public void verifyWhetherUserIsAbleToSuccessfullyLogout() throws IOException {
 			String usernamevalue=ExcelUtility.getStringData(0, 0, "Loginpage");
 			String passwordvalue=ExcelUtility.getStringData(0, 1, "Loginpage");
