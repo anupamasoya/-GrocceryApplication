@@ -15,7 +15,7 @@ public class ExcelUtility {
 		static XSSFSheet sh; // to represent sheet
 
 		public static String getStringData(int row, int col,String sheet) throws IOException {
-			f = new FileInputStream("C:\\Users\\Anupama S\\git\\repository2\\GrocceryApplication\\src\\test\\resources\\TestData.xlsx"); // used to open the location of a
+			f = new FileInputStream("C:\\Users\\Anupama S\\git\\repository2\\GrocceryApplication\\src\\test\\resources\\TestDataFile.xlsx"); // used to open the location of a
 																					// specific file
 			w = new XSSFWorkbook(f); // to load the file to memory with help of apache. orofile workbook anna parayuna
 			sh = w.getSheet(sheet); // used to select the sheet1
@@ -26,7 +26,7 @@ public class ExcelUtility {
 		}
 
 		public static String getIntegerData(int row, int col,String sheet) throws IOException {
-			f = new FileInputStream("C:\\Users\\Anupama S\\git\\repository2\\GrocceryApplication\\src\\test\\resources\\TestData.xlsx");
+			f = new FileInputStream("C:\\Users\\Anupama S\\git\\repository2\\GrocceryApplication\\src\\test\\resources\\TestDataFile.xlsx");
 			w = new XSSFWorkbook(f);
 			sh = w.getSheet(sheet);
 			XSSFRow r = sh.getRow(row);
@@ -36,7 +36,7 @@ public class ExcelUtility {
 			// return val;
 
 		}//"C:\Users\Anupama S\git\repository2\GrocceryApplication\src\test\resources\TestData.xlsx"
-	}
+	}//"C:\Users\Anupama S\git\repository2\GrocceryApplication\src\test\resources\TestDataFile.xlsx"
 
 
 

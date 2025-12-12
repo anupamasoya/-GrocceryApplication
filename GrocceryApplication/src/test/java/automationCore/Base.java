@@ -19,16 +19,13 @@ public class Base {
 	@BeforeMethod(alwaysRun = true)
 	@Parameters("browsers")
 	public void initializeBrowser(String browsers) throws Exception {
-		if(browsers.equalsIgnoreCase("Chrome")) {
-		driver = new ChromeDriver();
-		}
-		else if(browsers.equalsIgnoreCase("firefox")) {
-			driver=new FirefoxDriver();
-		}
-		else if(browsers.equalsIgnoreCase("edge")) {
-			driver=new EdgeDriver();
-		}
-		else {
+		if (browsers.equalsIgnoreCase("Chrome")) {
+			driver = new ChromeDriver();
+		} else if (browsers.equalsIgnoreCase("firefox")) {
+			driver = new FirefoxDriver();
+		} else if (browsers.equalsIgnoreCase("edge")) {
+			driver = new EdgeDriver();
+		} else {
 			throw new Exception("Invalid browser");
 		}
 		driver.get("https://groceryapp.uniqassosiates.com/admin/login");
@@ -44,7 +41,7 @@ public class Base {
 			ScreenshotUtility screenShot = new ScreenshotUtility();
 			screenShot.getScreenshot(driver, iTestResult.getName());
 		}
-		//driver.quit();
+		// driver.quit();
 
 	} // iTestResult.getStatus() ➝ Returns an integer (e.g., 1,2,3)
 }
