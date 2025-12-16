@@ -13,66 +13,79 @@ public class AdminUsersPage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
-	@FindBy(xpath="//a[contains(text(),' New')]") WebElement newLink;
-	@FindBy(id="username") WebElement userName;
-	@FindBy(id="password") WebElement password;
-	@FindBy(xpath="//select[@id='user_type']") WebElement userTypeDropdown;
-	@FindBy(xpath="//button[@name='Create']") WebElement saveButton;
-	@FindBy(xpath="//a[contains(text(),' Search')]") WebElement searchLink;
-	@FindBy(xpath="//input[@id='un']") WebElement searchUserName;
-	@FindBy(xpath="//button[@name='Search']") WebElement searchButton;
-	@FindBy(xpath="//a[contains(text(),' Reset')]") WebElement resetLink;
-	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible' or @class='alert alert-danger alert-dismissible']")WebElement userAddedSuccessMessage;
-	@FindBy(xpath="//h4[text()='Admin Users']") WebElement searchAdminUsersResultTab;
-	@FindBy(xpath="//h4[text()='Admin Users']//ancestor::div[@class='card']") WebElement adminUsersList;
-	
+
+	@FindBy(xpath = "//a[contains(text(),' New')]")
+	WebElement newLink;
+	@FindBy(id = "username")
+	WebElement userName;
+	@FindBy(id = "password")
+	WebElement password;
+	@FindBy(xpath = "//select[@id='user_type']")
+	WebElement userTypeDropdown;
+	@FindBy(xpath = "//button[@name='Create']")
+	WebElement saveButton;
+	@FindBy(xpath = "//a[contains(text(),' Search')]")
+	WebElement searchLink;
+	@FindBy(xpath = "//input[@id='un']")
+	WebElement searchUserName;
+	@FindBy(xpath = "//button[@name='Search']")
+	WebElement searchButton;
+	@FindBy(xpath = "//a[contains(text(),' Reset')]")
+	WebElement resetLink;
+	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible' or @class='alert alert-danger alert-dismissible']")
+	WebElement userAddedSuccessMessage;
+	@FindBy(xpath = "//h4[text()='Admin Users']")
+	WebElement searchAdminUsersResultTab;
+	@FindBy(xpath = "//h4[text()='Admin Users']//ancestor::div[@class='card']")
+	WebElement adminUsersList;
+
 	public void clickOnNewButton() {
 		newLink.click();
 	}
-	
+
 	public void enterUserNameOnUserNameField(String newUserNameValue) {
 		userName.sendKeys(newUserNameValue);
 	}
-	
+
 	public void enterPasswordOnPasswordField(String newPasswordValue) {
 		password.sendKeys(newPasswordValue);
 	}
-	
+
 	public void selectTheUserType(String userTypeValue) {
-		Select select=new Select(userTypeDropdown);
+		Select select = new Select(userTypeDropdown);
 		select.selectByVisibleText(userTypeValue);
 	}
+
 	public void saveButtonClick() {
 		saveButton.click();
 	}
-	
+
 	public void searchButtonClick() {
 		searchLink.click();
 	}
-	
+
 	public void enterTheUserNameToSearch(String userNameValue) {
 		searchUserName.sendKeys(userNameValue);
 	}
-	
+
 	public void searchButtonClickToCheckUserName() {
 		searchButton.click();
 	}
-	
+
 	public void resetButtonClick() {
 		resetLink.click();
 	}
-	
+
 	public boolean userAddedSuccessMessage() {
 		return userAddedSuccessMessage.isDisplayed();
 	}
-	
+
 	public boolean isSearchAdminUsersResultTabDisplayed() {
 		return searchAdminUsersResultTab.isDisplayed();
 	}
-	
+
 	public boolean isAdminUsersListDisplayed() {
 		return adminUsersList.isDisplayed();
 	}
-	
+
 }

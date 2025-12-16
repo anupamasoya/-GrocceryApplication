@@ -5,7 +5,7 @@
     <classes>
       <class name="testscripts.LoginTest">
         <methods>
-          <include name="verifyWhetherUserIsAbleToLoginWithValidCredential"/>
+          <include name="verifyWhetherUserIsAbleToLoginWithInValidUserNameandInValidPassword" invocation-numbers="0"/>
           <include name="initializeBrowser"/>
           <include name="driverQuit"/>
         </methods>

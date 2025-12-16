@@ -4,19 +4,19 @@
 
 
 	<test thread-count="5" name="ChromeTest">
-	<parameter name="browsers" value="Chrome"></parameter>
+		<parameter name="browsers" value="Chrome"></parameter>
 		<classes>
 			<class name="testscripts.HomeTest" />
 		</classes>
-	</test> 
+	</test>
 	<!--
 	Test -->
 	<test thread-count="5" name="FirefoxTest">
-	<parameter name="browsers" value="Firefox"></parameter>
+		<parameter name="browsers" value="Firefox"></parameter>
 		<classes>
 			<class name="testscripts.HomeTest" />
 		</classes>
-	</test> 
-	
+	</test>
+
 </suite> 
 
