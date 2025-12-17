@@ -13,29 +13,27 @@ import utilities.ExcelUtility;
 import utilities.FakerUtility;
 
 public class AdminUsersTest extends Base {
+	HomePage home;
+	AdminUsersPage adminuser;
 	@Test(priority = 1, description = "Verify whether admin is able to add new user")
 	public void verifyWhetherAdminIsAbleToAddNewUser() throws IOException {// clickOnMoreInfoLink()
 		String username = ExcelUtility.getStringData(0, 0, "LoginPage");
 		String password = ExcelUtility.getStringData(0, 1, "LoginPage");
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.enterUserNameOnUserNamefield(username);
-		loginPage.enterPasswordOnPasswordField(password);
-		loginPage.signinClick();
-		HomePage homePage = new HomePage(driver);
-		homePage.clickOnMoreInfoLink();
-		AdminUsersPage adminUsersPage = new AdminUsersPage(driver);
-		adminUsersPage.clickOnNewButton();
+		loginPage.enterUserNameOnUserNamefield(username).enterPasswordOnPasswordField(password);
+		home=loginPage.signinClick();
+		
+		adminuser=home.clickOnMoreInfoAdminLink();
+		
+		adminuser.clickOnNewButton();
 		FakerUtility fakerUtility = new FakerUtility();
 		String newUsername = fakerUtility.createRandomUsername();
 		String newPassword = fakerUtility.createFakePassword();
 		// String newUsername = ExcelUtility.getStringData(0, 0, "AdminUsersPage");
 		// String newPassword = ExcelUtility.getStringData(0, 1, "AdminUsersPage");
 		String userType = ExcelUtility.getStringData(0, 2, "AdminUsersPage");
-		adminUsersPage.enterUserNameOnUserNameField(newUsername);
-		adminUsersPage.enterPasswordOnPasswordField(newPassword);
-		adminUsersPage.selectTheUserType(userType);
-		adminUsersPage.saveButtonClick();
-		boolean userAddedAlertDisplayed = adminUsersPage.userAddedSuccessMessage();
+		adminuser.enterNewUserNameOnUserNameField(newUsername).enterNewPasswordOnPasswordField(newPassword).selectTheUserType(userType).saveButtonClick();
+		boolean userAddedAlertDisplayed = adminuser.userAddedSuccessMessage();
 		Assert.assertTrue(userAddedAlertDisplayed, "User is not able to add new user.");
 
 	}
@@ -45,17 +43,15 @@ public class AdminUsersTest extends Base {
 		String username = ExcelUtility.getStringData(0, 0, "loginPage");
 		String password = ExcelUtility.getStringData(0, 1, "loginPage");
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.enterUserNameOnUserNamefield(username);
-		loginPage.enterPasswordOnPasswordField(password);
-		loginPage.signinClick();
-		HomePage homePage = new HomePage(driver);
-		homePage.clickOnMoreInfoLink();
-		AdminUsersPage adminUsersPage = new AdminUsersPage(driver);
-		adminUsersPage.searchButtonClick();
+		loginPage.enterUserNameOnUserNamefield(username).enterPasswordOnPasswordField(password);
+		home=loginPage.signinClick();
+		
+		adminuser=home.clickOnMoreInfoAdminLink();
+	
+		adminuser.searchButtonClick();
 		String newUsername = ExcelUtility.getStringData(0, 0, "AdminUsersPage");
-		adminUsersPage.enterTheUserNameToSearch(newUsername);
-		adminUsersPage.searchButtonClickToCheckUserName();
-		boolean adminUsersResultTabDisplayed = adminUsersPage.isSearchAdminUsersResultTabDisplayed();
+		adminuser.enterTheUserNameToSearch(newUsername).searchButtonClickToCheckUserName();
+		boolean adminUsersResultTabDisplayed = adminuser.isSearchAdminUsersResultTabDisplayed();
 		Assert.assertTrue(adminUsersResultTabDisplayed, "User is not able to search for the user.");
 	}
 
@@ -64,14 +60,13 @@ public class AdminUsersTest extends Base {
 		String username = ExcelUtility.getStringData(0, 0, "loginPage");
 		String password = ExcelUtility.getStringData(0, 1, "loginPage");
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.enterUserNameOnUserNamefield(username);
-		loginPage.enterPasswordOnPasswordField(password);
-		loginPage.signinClick();
-		HomePage homePage = new HomePage(driver);
-		homePage.clickOnMoreInfoLink();
-		AdminUsersPage adminUsersPage = new AdminUsersPage(driver);
-		adminUsersPage.resetButtonClick();
-		boolean adminUsersListDisplayed = adminUsersPage.isAdminUsersListDisplayed();
+		loginPage.enterUserNameOnUserNamefield(username).enterPasswordOnPasswordField(password);
+		home=loginPage.signinClick();
+		
+		adminuser=home.clickOnMoreInfoAdminLink();
+		
+		adminuser.resetButtonClick();
+		boolean adminUsersListDisplayed = adminuser.isAdminUsersListDisplayed();
 		Assert.assertTrue(adminUsersListDisplayed, "User list is not reset.");
 	}
 }

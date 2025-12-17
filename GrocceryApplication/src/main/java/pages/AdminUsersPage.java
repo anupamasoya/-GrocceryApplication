@@ -39,41 +39,50 @@ public class AdminUsersPage {
 	@FindBy(xpath = "//h4[text()='Admin Users']//ancestor::div[@class='card']")
 	WebElement adminUsersList;
 
-	public void clickOnNewButton() {
+	public AdminUsersPage clickOnNewButton() {
 		newLink.click();
+		return this;
 	}
 
-	public void enterUserNameOnUserNameField(String newUserNameValue) {
+	public AdminUsersPage enterNewUserNameOnUserNameField(String newUserNameValue) {
 		userName.sendKeys(newUserNameValue);
+		return this;
 	}
 
-	public void enterPasswordOnPasswordField(String newPasswordValue) {
+	public AdminUsersPage enterNewPasswordOnPasswordField(String newPasswordValue) {
 		password.sendKeys(newPasswordValue);
+		return this;
 	}
 
-	public void selectTheUserType(String userTypeValue) {
+	public AdminUsersPage selectTheUserType(String userTypeValue) {
 		Select select = new Select(userTypeDropdown);
 		select.selectByVisibleText(userTypeValue);
+		return this;
 	}
 
-	public void saveButtonClick() {
+	public AdminUsersPage saveButtonClick() {
 		saveButton.click();
+		return this;
 	}
 
-	public void searchButtonClick() {
+	public AdminUsersPage searchButtonClick() {
 		searchLink.click();
+		return this;
 	}
 
-	public void enterTheUserNameToSearch(String userNameValue) {
+	public AdminUsersPage enterTheUserNameToSearch(String userNameValue) {
 		searchUserName.sendKeys(userNameValue);
+		return this;
 	}
 
-	public void searchButtonClickToCheckUserName() {
+	public AdminUsersPage searchButtonClickToCheckUserName() {
 		searchButton.click();
+		return this;
 	}
 
-	public void resetButtonClick() {
+	public AdminUsersPage resetButtonClick() {
 		resetLink.click();
+		return this;
 	}
 
 	public boolean userAddedSuccessMessage() {

@@ -28,16 +28,19 @@ public class LoginPage {
 	@FindBy(xpath = "//p[text()='Sign in to start your session']")
 	WebElement heading;
 
-	public void enterUserNameOnUserNamefield(String usernamevalue) { // Takes a String usernamevalue
-		userName.sendKeys(usernamevalue); // Types that value inside the username field.
+	public LoginPage enterUserNameOnUserNamefield(String usernamevalue) { // Takes a String usernamevalue
+		userName.sendKeys(usernamevalue);
+		return this;  // Types that value inside the username field.
 	}
 
-	public void enterPasswordOnPasswordField(String passwordvalue) {
+	public LoginPage enterPasswordOnPasswordField(String passwordvalue) {
 		password.sendKeys(passwordvalue);
+		return this;
 	}
 
-	public void signinClick() {
+	public HomePage signinClick() {
 		signInBtn.click();
+		return new HomePage(driver);
 	}
 
 	public boolean isDashboardDisplayed() {
