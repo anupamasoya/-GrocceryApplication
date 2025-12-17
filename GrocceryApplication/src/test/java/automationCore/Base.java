@@ -49,7 +49,7 @@ public class Base {
 			ScreenshotUtility screenShot = new ScreenshotUtility();
 			screenShot.getScreenshot(driver, iTestResult.getName());
 		}
-		// driver.quit();
+		driver.quit();
 
 	} // iTestResult.getStatus() ➝ Returns an integer (e.g., 1,2,3)
 }
