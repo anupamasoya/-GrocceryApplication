@@ -14,16 +14,15 @@ import pages.ManageNewsPage;
 public class MangaeNewsPageTest extends Base {
 	HomePage home;
 	ManageNewsPage managenews;
+
 	@Test
 	public void verifyWhetherAdminIsAbleToAddNews() throws IOException {// clickOnMoreInfoLink()
 		String username = ExcelUtility.getStringData(0, 0, "LoginPage");
 		String password = ExcelUtility.getStringData(0, 1, "LoginPage");
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.enterUserNameOnUserNamefield(username).enterPasswordOnPasswordField(password);
-		home=loginPage.signinClick();
-		
-		managenews=home.clickOnMoreInfomanageNews();
-	
+		home = loginPage.signinClick();
+		managenews = home.clickOnMoreInfomanageNews();
 		managenews.clickNewButton();
 		String newsvalue = ExcelUtility.getStringData(0, 0, "ManageNewsPage");
 		managenews.enterTheNews(newsvalue).clickSaveButton();
@@ -37,8 +36,8 @@ public class MangaeNewsPageTest extends Base {
 		String password = ExcelUtility.getStringData(0, 1, "LoginPage");
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.enterUserNameOnUserNamefield(username).enterPasswordOnPasswordField(password);
-		home=loginPage.signinClick();
-		managenews=home.clickOnMoreInfomanageNews();
+		home = loginPage.signinClick();
+		managenews = home.clickOnMoreInfomanageNews();
 		managenews.clickSearchButton();
 		String titlevalue = ExcelUtility.getStringData(0, 0, "ManageNewsPage");
 		managenews.enterTitleToSearch(titlevalue).clickSearchResultButton();
@@ -51,8 +50,8 @@ public class MangaeNewsPageTest extends Base {
 		String password = ExcelUtility.getStringData(0, 1, "LoginPage");
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.enterUserNameOnUserNamefield(username).enterPasswordOnPasswordField(password);
-		home=loginPage.signinClick();
-		managenews=home.clickOnMoreInfomanageNews();
+		home = loginPage.signinClick();
+		managenews = home.clickOnMoreInfomanageNews();
 		managenews.clickSearchButton();
 		String titlevalue = ExcelUtility.getStringData(0, 0, "ManageNewsPage");
 		managenews.enterTitleToSearch(titlevalue).clickResetButton();

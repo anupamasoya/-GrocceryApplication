@@ -11,8 +11,8 @@ import utilities.ExcelUtility;
 
 public class LoginTest extends Base {
 	HomePage home;
-	@Test(priority = 1, description = "Verify User can login with valid credentials", groups = {
-			"smoke" }, dataProvider = "loginProvider")
+
+	@Test(priority = 1, description = "Verify User can login with valid credentials", groups = { "smoke" })
 	public void verifyWhetherUserIsAbleToLoginWithValidCredential(String usernamevalue, String passwordvalue)
 			throws IOException {
 		// String usernamevalue = ExcelUtility.getStringData(0, 0, "LoginPage");//
@@ -22,12 +22,12 @@ public class LoginTest extends Base {
 		// Reading password from excel
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.enterUserNameOnUserNamefield(usernamevalue).enterPasswordOnPasswordField(passwordvalue);
-		home=loginPage.signinClick();
+		home = loginPage.signinClick();
 		boolean dashboardDisplayed = loginPage.isDashboardDisplayed();
 		Assert.assertTrue(dashboardDisplayed, "user was unable to login with valid credentials.");
 	}
 
-	@Test(priority = 2, description = "Verify User is able to login with valid username and invalid password", dataProvider = "loginProvider")
+	@Test(priority = 2, description = "Verify User is able to login with valid username and invalid password")
 	public void verifyWhetherUserIsAbleToLoginWithValidUserNameandInvalidPassword(String usernamevalue,
 			String passwordvalue) throws IOException {
 		// String usernamevalue = ExcelUtility.getStringData(1, 0, "LoginPage");
@@ -39,7 +39,7 @@ public class LoginTest extends Base {
 		Assert.assertEquals(actual, expected, "user was able to login with invalid password.");
 	}
 
-	@Test(priority = 3, description = "Verify user is able to login with invalid username and valid password", dataProvider = "loginProvider")
+	@Test(priority = 3, description = "Verify user is able to login with invalid username and valid password")
 	public void verifyWhetherUserIsAbleToLoginWithInValidUserNameandValidPassword(String usernamevalue,
 			String passwordvalue) throws IOException {
 		// String usernamevalue = ExcelUtility.getStringData(2, 0, "LoginPage");

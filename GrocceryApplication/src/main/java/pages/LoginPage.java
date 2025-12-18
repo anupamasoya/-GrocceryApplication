@@ -30,7 +30,7 @@ public class LoginPage {
 
 	public LoginPage enterUserNameOnUserNamefield(String usernamevalue) { // Takes a String usernamevalue
 		userName.sendKeys(usernamevalue);
-		return this;  // Types that value inside the username field.
+		return this; // Types that value inside the username field.
 	}
 
 	public LoginPage enterPasswordOnPasswordField(String passwordvalue) {
