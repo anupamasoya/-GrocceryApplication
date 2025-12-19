@@ -25,7 +25,7 @@ public class LoginTest extends Base {
 		loginPage.enterUserNameOnUserNamefield(usernamevalue).enterPasswordOnPasswordField(passwordvalue);
 		home = loginPage.signinClick();
 		boolean dashboardDisplayed = loginPage.isDashboardDisplayed();
-		Assert.assertTrue(dashboardDisplayed, Constants.VALIDCREDENTIALS);
+		Assert.assertTrue(dashboardDisplayed, Constants.VALIDCREDENTIALSERROR);
 	}
 
 	@Test(priority = 2, description = "Verify User is able to login with valid username and invalid password")
@@ -63,7 +63,7 @@ public class LoginTest extends Base {
 		loginPage.enterUserNameOnUserNamefield(usernamevalue).enterPasswordOnPasswordField(passwordvalue).signinClick();
 		String expected = "Sign in to start your session";
 		String actual = loginPage.getTheHeading();
-		Assert.assertEquals(actual, expected,Constants.VALIDCREDENTIALSERROR);
+		Assert.assertEquals(actual, expected,Constants.VALIDCREDENTIALS);
 	}
 
 	@DataProvider(name = "loginProvider")
