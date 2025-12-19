@@ -1,12 +1,15 @@
 package testscripts;
 
 import java.io.IOException;
+import java.lang.invoke.ConstantBootstraps;
 
+import org.apache.commons.math3.analysis.function.Constant;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
+import constant.Constants;
 import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
@@ -26,7 +29,7 @@ public class HomeTest extends Base {
 		loginPage = home.logoutButtonClick();
 		String expected = "7rmart supermarket";
 		String actual = loginPage.getTheTitle();
-		Assert.assertEquals(actual, expected, "User was unable to logout");
+		Assert.assertEquals(actual, expected, Constants.LOGOUT);
 
 	}
 

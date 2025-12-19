@@ -6,16 +6,17 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
+import constant.Constants;
 import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 import pages.ManageNewsPage;
 
-public class MangaeNewsPageTest extends Base {
+public class ManageNewsPageTest extends Base {
 	HomePage home;
 	ManageNewsPage managenews;
 
-	@Test
+	@Test(description = "verify Whether Admin Is Able To AddNews")
 	public void verifyWhetherAdminIsAbleToAddNews() throws IOException {// clickOnMoreInfoLink()
 		String username = ExcelUtility.getStringData(0, 0, "LoginPage");
 		String password = ExcelUtility.getStringData(0, 1, "LoginPage");
@@ -27,7 +28,7 @@ public class MangaeNewsPageTest extends Base {
 		String newsvalue = ExcelUtility.getStringData(0, 0, "ManageNewsPage");
 		managenews.enterTheNews(newsvalue).clickSaveButton();
 		boolean newsCreatedAlert = managenews.newsCreatedAlert();
-		Assert.assertTrue(newsCreatedAlert, "not possible to create news");
+		Assert.assertTrue(newsCreatedAlert, Constants.ADDNEWNEWS);
 	}
 
 	@Test

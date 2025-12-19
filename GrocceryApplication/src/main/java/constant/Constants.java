@@ -13,6 +13,10 @@ public class Constants {
 
 	public static final String ABLETOADDNEWUSER = "admin is able to add new user";
 	public static final String ABLETOSEARCHTHENEWLYADDEDUSER = " Able To Search The Newly AddedUser";
-	public static final String ABLETORESETTHEUSERLIST = "Able To Reset The UsersList";
+	public static final String ABLETORESETTHEUSERLIST = "User list is not reset";
+	
+	public static final String ADDNEWNEWS = "able to create new news";
+	public static final String SEARCHNEWNEWS = "able to search new news";
+	public static final String RESETTHENEWS = "able to reset the news";
 
 }

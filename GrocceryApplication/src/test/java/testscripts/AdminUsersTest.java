@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
+import constant.Constants;
 import pages.AdminUsersPage;
 import pages.HomePage;
 import pages.LoginPage;
@@ -36,7 +37,7 @@ public class AdminUsersTest extends Base {
 		adminuser.enterNewUserNameOnUserNameField(newUsername).enterNewPasswordOnPasswordField(newPassword)
 				.selectTheUserType(userType).saveButtonClick();
 		boolean userAddedAlertDisplayed = adminuser.userAddedSuccessMessage();
-		Assert.assertTrue(userAddedAlertDisplayed, "User is not able to add new user.");
+		Assert.assertTrue(userAddedAlertDisplayed, Constants.ABLETOADDNEWUSER);
 
 	}
 
@@ -54,7 +55,7 @@ public class AdminUsersTest extends Base {
 		String newUsername = ExcelUtility.getStringData(0, 0, "AdminUsersPage");
 		adminuser.enterTheUserNameToSearch(newUsername).searchButtonClickToCheckUserName();
 		boolean adminUsersResultTabDisplayed = adminuser.isSearchAdminUsersResultTabDisplayed();
-		Assert.assertTrue(adminUsersResultTabDisplayed, "User is not able to search for the user.");
+		Assert.assertTrue(adminUsersResultTabDisplayed, Constants.ABLETOSEARCHTHENEWLYADDEDUSER);
 	}
 
 	@Test(priority = 3, description = "Verify Whether Admin Is Able To Reset The UsersList")
@@ -69,6 +70,6 @@ public class AdminUsersTest extends Base {
 
 		adminuser.resetButtonClick();
 		boolean adminUsersListDisplayed = adminuser.isAdminUsersListDisplayed();
-		Assert.assertTrue(adminUsersListDisplayed, "User list is not reset.");
+		Assert.assertTrue(adminUsersListDisplayed, Constants.ABLETORESETTHEUSERLIST);
 	}
 }
