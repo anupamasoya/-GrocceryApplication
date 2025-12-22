@@ -24,9 +24,7 @@ public class AdminUsersTest extends Base {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.enterUserNameOnUserNamefield(username).enterPasswordOnPasswordField(password);
 		home = loginPage.signinClick();
-
 		adminuser = home.clickOnMoreInfoAdminLink();
-
 		adminuser.clickOnNewButton();
 		FakerUtility fakerUtility = new FakerUtility();
 		String newUsername = fakerUtility.createRandomUsername();
@@ -48,9 +46,7 @@ public class AdminUsersTest extends Base {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.enterUserNameOnUserNamefield(username).enterPasswordOnPasswordField(password);
 		home = loginPage.signinClick();
-
 		adminuser = home.clickOnMoreInfoAdminLink();
-
 		adminuser.searchButtonClick();
 		String newUsername = ExcelUtility.getStringData(0, 0, "AdminUsersPage");
 		adminuser.enterTheUserNameToSearch(newUsername).searchButtonClickToCheckUserName();
@@ -65,9 +61,7 @@ public class AdminUsersTest extends Base {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.enterUserNameOnUserNamefield(username).enterPasswordOnPasswordField(password);
 		home = loginPage.signinClick();
-
 		adminuser = home.clickOnMoreInfoAdminLink();
-
 		adminuser.resetButtonClick();
 		boolean adminUsersListDisplayed = adminuser.isAdminUsersListDisplayed();
 		Assert.assertTrue(adminUsersListDisplayed, Constants.ABLETORESETTHEUSERLIST);

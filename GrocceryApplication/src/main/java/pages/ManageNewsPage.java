@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.PageUtility;
+
 public class ManageNewsPage {
 	public WebDriver driver;
 
@@ -33,7 +35,8 @@ public class ManageNewsPage {
 	WebElement alertNewsCreatedSuccecssfully;
 
 	public ManageNewsPage clickNewButton() {
-		newButton.click();
+		PageUtility page = new PageUtility();
+		page.clickButton(newButton);
 		return this;
 	}
 
@@ -43,12 +46,14 @@ public class ManageNewsPage {
 	}
 
 	public ManageNewsPage clickSaveButton() {
-		saveButton.click();
+		PageUtility page = new PageUtility();
+		page.clickButton(saveButton);
 		return this;
 	}
 
 	public ManageNewsPage clickSearchButton() {
-		searchButton.click();
+		PageUtility page = new PageUtility();
+		page.clickButton(searchButton);
 		return this;
 	}
 
@@ -58,7 +63,8 @@ public class ManageNewsPage {
 	}
 
 	public ManageNewsPage clickResetButton() {
-		resetButton.click();
+		PageUtility page = new PageUtility();
+		page.clickButton(resetButton);
 		return this;
 	}
 
@@ -67,13 +73,13 @@ public class ManageNewsPage {
 	}
 
 	public ManageNewsPage clickSearchResultButton() {
-		searchResultButton.click();
+		PageUtility page = new PageUtility();
+		page.clickButton(searchResultButton);
 		return this;
 	}
 
 	public boolean newsCreatedAlert() {
 		return alertNewsCreatedSuccecssfully.isDisplayed();
-
 	}
 
 }

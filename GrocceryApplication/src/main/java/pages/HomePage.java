@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.PageUtility;
+
 public class HomePage {
 	public WebDriver driver;
 
@@ -23,22 +25,26 @@ public class HomePage {
 	WebElement moreInfomanageNews;
 
 	public HomePage adminButtonClick() {
-		admin.click();
+		PageUtility page = new PageUtility();
+		page.clickButton(admin);
 		return this;
 	}
 
 	public LoginPage logoutButtonClick() {
-		logout.click();
+		PageUtility page = new PageUtility();
+		page.clickButton(logout);
 		return new LoginPage(driver);
 	}
 
 	public AdminUsersPage clickOnMoreInfoAdminLink() {
-		moreInfoAdminLink.click();
+		PageUtility page = new PageUtility();
+		page.clickButton(moreInfoAdminLink);
 		return new AdminUsersPage(driver);
 	}
 
 	public ManageNewsPage clickOnMoreInfomanageNews() {
-		moreInfomanageNews.click();
+		PageUtility page = new PageUtility();
+		page.clickButton(moreInfomanageNews);
 		return new ManageNewsPage(driver);
 	}
 

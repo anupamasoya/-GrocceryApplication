@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.PageUtility;
+
 public class LoginPage {
 	public WebDriver driver;
 
@@ -39,7 +41,8 @@ public class LoginPage {
 	}
 
 	public HomePage signinClick() {
-		signInBtn.click();
+		PageUtility page = new PageUtility();
+		page.clickButton(signInBtn);
 		return new HomePage(driver);
 	}
 
